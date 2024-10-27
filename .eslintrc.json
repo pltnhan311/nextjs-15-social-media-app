@@ -1,4 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier", "prettier-plugin-prisma", "prettier-plugin-tailwindcss"],
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-prisma"]
 }

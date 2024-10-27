@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     template: "%s | WeChat",
     default: "WeChat",
   },
-  description: "WeChat is a social media platform for sharing your thoughts and ideas with others.",
+  description:
+    "WeChat is a social media platform for sharing your thoughts and ideas with others.",
 };
 
 export default function RootLayout({
