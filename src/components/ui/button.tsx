@@ -22,7 +22,7 @@ const buttonVariants = cva(
         transparent:
           "border border-primary text-primary bg-transparent hover:bg-primary/10",
         transparentNeutral:
-          "border border-gray-300 text-gray-700 bg-transparent hover:bg-gray-100",
+          "border border-gray-300 text-gray-700 bg-transparent hover:bg-gray-100 dark:border-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800",
       },
       size: {
         default: "h-9 px-4 py-2",
