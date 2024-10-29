@@ -1,3 +1,4 @@
+import ForYouFeed from "@/app/(main)/ForYouFeed";
 import Post from "@/components/Post";
 import PostEditor from "@/components/posts/editor/PostEditor";
 import TrendsSidebar from "@/components/TrendsSidebar";
@@ -12,12 +13,10 @@ export default async function Home() {
   });
 
   return (
-    <main className="w-full min-w-0 flex gap-5">
+    <main className="flex w-full min-w-0 gap-5">
       <div className="w-full min-w-0 space-y-5">
         <PostEditor />
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
+        <ForYouFeed />
       </div>
       <TrendsSidebar />
     </main>

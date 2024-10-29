@@ -2,7 +2,7 @@
 
 import UserAvatar from "@/components/UserAvatar";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { use } from "react";
 import { logout } from "@/app/(auth)/action";
 import { useSession } from "@/app/(main)/SessionProvider";
 import { LogOutIcon, UserIcon } from "lucide-react";
@@ -16,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface UserButtonProps {
   className?: string;
@@ -24,6 +25,8 @@ interface UserButtonProps {
 const UserButton = ({ className }: UserButtonProps) => {
   const { user } = useSession();
 
+  const queryClient = useQueryClient();
+  
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -44,6 +47,7 @@ const UserButton = ({ className }: UserButtonProps) => {
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={() => {
+            queryClient.clear();
             logout();
           }}
         >
