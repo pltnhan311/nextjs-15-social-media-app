@@ -2,6 +2,7 @@
 
 import Post from "@/components/Post";
 import { Skeleton } from "@/components/ui/skeleton";
+import kyInstance from "@/lib/ky";
 import { PostData } from "@/lib/types";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
@@ -9,13 +10,7 @@ import { Loader2 } from "lucide-react";
 const ForYouFeed = () => {
   const query = useQuery<PostData[]>({
     queryKey: ["post-feed", "for-you"],
-    queryFn: async () => {
-      const response = await fetch("/api/posts/for-you");
-      if (!response.ok) {
-        throw new Error("Request failed with statusCode: " + response.status);
-      }
-      return response.json();
-    },
+    queryFn: kyInstance.get("/api/posts/for-you").json<PostData[]>,
   });
 
   if (query.status === "pending") {
@@ -31,11 +26,11 @@ const ForYouFeed = () => {
   }
 
   return (
-    <>
+    <div className="space-y-5">
       {query.data.map((post) => (
         <Post key={post.id} post={post} />
       ))}
-    </>
+    </div>
   );
 };
 
