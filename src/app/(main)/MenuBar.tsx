@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Bell, Bookmark, HomeIcon, Mail } from "lucide-react";
 import Link from "next/link";
 
@@ -8,7 +9,7 @@ interface MenuBarProps {
 
 const MenuBar = ({ className }: MenuBarProps) => {
   return (
-    <div className={className}>
+    <div className={cn("", className)}>
       <Button
         variant="ghost"
         className="flex items-center justify-start gap-3"
@@ -17,7 +18,7 @@ const MenuBar = ({ className }: MenuBarProps) => {
       >
         <Link href="/">
           <HomeIcon className="!size-5" />
-          <span className="hidden lg:inline">Home</span>
+          <span className="hidden text-md lg:inline">Home</span>
         </Link>
       </Button>
       <Button
@@ -28,7 +29,7 @@ const MenuBar = ({ className }: MenuBarProps) => {
       >
         <Link href="/notifications">
           <Bell className="!size-5" />
-          <span className="hidden lg:inline">Notifications</span>
+          <span className="hidden text-md lg:inline">Notifications</span>
         </Link>
       </Button>
       <Button
@@ -39,7 +40,7 @@ const MenuBar = ({ className }: MenuBarProps) => {
       >
         <Link href="/messages">
           <Mail className="!size-5" />
-          <span className="hidden lg:inline">Messages</span>
+          <span className="hidden text-md lg:inline">Messages</span>
         </Link>
       </Button>
       <Button
@@ -50,7 +51,7 @@ const MenuBar = ({ className }: MenuBarProps) => {
       >
         <Link href="/bookmarks">
           <Bookmark className="!size-5" />
-          <span className="hidden lg:inline">Bookmarks</span>
+          <span className="hidden text-md lg:inline">Bookmarks</span>
         </Link>
       </Button>
     </div>
