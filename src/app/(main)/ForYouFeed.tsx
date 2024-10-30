@@ -3,7 +3,6 @@
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/Post";
 import PostsLoadingSkeleton from "@/components/PostsLoadingSkeleton";
-import { Skeleton } from "@/components/ui/skeleton";
 import kyInstance from "@/lib/ky";
 import { PostsPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
